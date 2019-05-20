@@ -4,10 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function init() {
     console.log('In tab2')
-    message_broadcast({ command: 'doit', data: 'Hello from tab2!' })
-}
-
-function message_broadcast(message) {
-    localStorage.setItem('message', JSON.stringify(message))
-    localStorage.removeItem('message')
+    const bc = new BroadcastChannel('chargeafter_channel')
+    bc.postMessage('Hello from tab2 using BroadcastChannel!')
 }
