@@ -1,11 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     init()
+    // Cross-domain test: communication is indeed not possible
+    // init({ sameDomain: false })
 })
 
-function init() {
+function init({ sameDomain = true } = {}) {
+    console.log({ sameDomain })
     console.log('In tab1')
+    const url = sameDomain ? 'tab2.html' : 'localhost:8082/tab2.html'
     window.addEventListener("storage", message_receive)
-    const tab2 = window.open('tab2.html', '_blank')
+    const tab2 = window.open(url, '_blank')
     window.setTimeout(() => tab2.close(), 1000)
 }
 
