@@ -25,9 +25,12 @@ http-server -p 8082
 1. You will see a new tab opening and after 500 ms closing
 1. Open the Dev Tools and go to the console
 1. You will see the following:
-    1. The iframe (loaded by tab1 of origin X, but having origin Y) receives a message from tab2 (of origin Y) via the BroadcastChannel
-    1. The iframe posts the message to the parent window
-    1. The parent window receives the message
+    1. Tab1 (of origin X) opens tab2 (of origin Y)
+    1. The iframe in tab1 (having origin Y) sets up a BroadcastChannel
+    1. The iframe receives a message from tab2 (of origin Y)
+    1. The iframe posts the message to the parent window (tab1)
+    1. The parent window (tab1) receives the message
+    1. If the message is "close", the parent window closes tab2
 
 ## TO DO
 This solution will currently only work in Chrome and Firefox. We need to add a polyfill for other browsers, e.g. Safari

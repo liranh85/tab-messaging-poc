@@ -5,5 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function init() {
     console.log('In tab2')
     const bc = new BroadcastChannel('chargeafter_channel')
-    bc.postMessage('Hello from tab2 using BroadcastChannel!')
+    window.setTimeout(() => {
+        bc.postMessage('close')
+    }, 2000)
 }
