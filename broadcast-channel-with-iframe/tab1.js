@@ -3,9 +3,20 @@ let tab2
 document.addEventListener('DOMContentLoaded', () => {
     // Cross-origin test: communication is now possible, because the iframe which loads this script has the same domain as the page we're communicating with
     // Upon receiving a message from the other tab, we will use `postMessage` to send it to the parent window
+    createIframe()
     setupIframeCommunication()
     openTab2({ sameDomain: false })
 })
+
+function createIframe() {
+    // <iframe src="http://127.0.0.1:8083/tab1-iframe.html" frameborder="0" name="testIframe" style="display: none;"></iframe>
+    const iframe = document.createElement('iframe')
+    iframe.src = 'http://127.0.0.1:8083/tab1-iframe.html'
+    // Remove this later
+    iframe.name = 'testIframe'
+    iframe.style.display = 'none'
+    document.body.append(iframe)
+}
 
 function openTab2({ sameDomain = true } = {}) {
     const url = sameDomain ? 'tab2.html' : 'http://127.0.0.1:8082/tab2.html'
