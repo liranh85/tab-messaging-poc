@@ -2,18 +2,17 @@ const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const cleanWebpackPlugin = require('clean-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: {
     main: [
       'babel-polyfill',
-      path.join(__dirname, 'src', 'index.js')
+      path.join(__dirname, 'src', 'tab1.js')
     ]
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: path.join('index.js')
+    filename: path.join('tab1.js')
   },
   module: {
     rules: [
@@ -67,11 +66,5 @@ module.exports = {
       template: path.join(__dirname, 'src', 'index.html'),
       filename: 'index.html'
     }),
-    new CopyWebpackPlugin([
-      {
-        from: path.join('src', 'images'),
-        to: 'images'
-      }
-    ])
   ]
 }

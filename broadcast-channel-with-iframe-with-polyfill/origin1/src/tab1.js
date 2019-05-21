@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Upon receiving a message from the other tab, we will use `postMessage` to send it to the parent window
     createIframe()
     setupIframeCommunication()
-    openTab2({ sameDomain: false })
+    openTab2()
 })
 
 function createIframe() {
@@ -15,8 +15,8 @@ function createIframe() {
     document.body.append(iframe)
 }
 
-function openTab2({ sameDomain = true } = {}) {
-    const url = sameDomain ? 'tab2.html' : 'http://127.0.0.1:8082/tab2.html'
+function openTab2() {
+    const url = 'http://127.0.0.1:8082'
     log(`Opening ${url} in 3 seconds`)
     window.setTimeout(() => {
         tab2 = window.open(url, '_blank')

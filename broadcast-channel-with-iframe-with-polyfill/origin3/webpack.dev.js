@@ -5,7 +5,7 @@ const common = require('./webpack.common.js')
 module.exports = merge(common, {
   devtool: 'eval',
   devServer: {
-    port: 8081
+    port: 8083
   },
   plugins: [
     new webpack.DefinePlugin({
