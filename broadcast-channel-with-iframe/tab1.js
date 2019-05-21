@@ -9,8 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function openTab2({ sameDomain = true } = {}) {
     const url = sameDomain ? 'tab2.html' : 'http://127.0.0.1:8082/tab2.html'
-    log(`Opening ${url}`, { sameDomain })
-    tab2 = window.open(url, '_blank')
+    log(`Opening ${url} in 3 seconds`)
+    window.setTimeout(() => {
+        tab2 = window.open(url, '_blank')
+    }, 3000)
 }
 
 function setupIframeCommunication() {
