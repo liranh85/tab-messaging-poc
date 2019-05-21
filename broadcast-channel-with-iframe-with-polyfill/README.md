@@ -19,31 +19,46 @@ We want the POC to achieve the following:
 * Tab 1 will then close the tab it opened
 
 ## Pre-requisites
-1. Install `http-server`
-```
-npm i -g http-server
-```
-2. Ensure that you enable pop-ups in your browser
+Ensure that you enable pop-ups in your browser
 
-## Setup
-Start a server in port 8081 for tab1.html
+## One time setup
+Install the dependencies
 ```
-http-server -p 8081
+cd origin1
+npm i
 ```
-Start a server in port 8082 for tab2.html
+
 ```
-http-server -p 8082
+cd origin2
+npm i
 ```
-Start a server in port 8082 for tab3.html and tab1-iframe.html
+
 ```
-http-server -p 8083
+cd origin2
+npm i
+```
+
+## Start the dev servers
+```
+cd origin1
+npm start
+```
+
+```
+cd origin2
+npm start
+```
+
+```
+cd origin3
+npm start
 ```
 
 ## Running the experiment
-1. In your browser, navigate to http://localhost:8081/tab1.html
+1. In your browser, navigate to http://localhost:8081
 1. This is Tab 1
-1. 3 seconds later, a new tab will open with the address http://localhost:8082/tab2.html
-1. 3 seconds later, the new tab will redirect to another webpage: http://localhost:8083/tab3.html
+1. 3 seconds later, a new tab will open with the address http://localhost:8082
+1. 3 seconds later, the new tab will redirect to another webpage: http://localhost:8083
 1. 3 seconds later, the tab will be closed by Tab 1
 1. Open the Dev Tools and go to the console
 1. You will see the steps outlined in *Goal* above

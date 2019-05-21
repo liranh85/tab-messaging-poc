@@ -11,7 +11,6 @@ The test shows that messages can only be sent between tabs **of the same origin*
 Install `http-server`
 ```
 npm i -g http-server
-
 ```
 
 ## Setup
