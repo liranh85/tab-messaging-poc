@@ -9,11 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function createIframe() {
-    // <iframe src="http://127.0.0.1:8083/tab1-iframe.html" frameborder="0" name="testIframe" style="display: none;"></iframe>
     const iframe = document.createElement('iframe')
     iframe.src = 'http://127.0.0.1:8083/tab1-iframe.html'
-    // Remove this later
-    iframe.name = 'testIframe'
     iframe.style.display = 'none'
     document.body.append(iframe)
 }
