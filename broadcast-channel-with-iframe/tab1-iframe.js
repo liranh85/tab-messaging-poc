@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Cross-domain test: communication is now possible, because the iframe which loads this script has the same domain as the page we're communicating with
+    // Cross-origin test: communication is now possible, because the iframe which loads this script has the same domain as the page we're communicating with
     // Upon receiving a message from the other tab, we will use `postMessage` to send it to the parent window
     init({ sameDomain: false })
 })

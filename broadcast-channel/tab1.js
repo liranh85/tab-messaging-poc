@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    init()
-    // Cross-domain test: communication is indeed not possible
-    // init({ sameDomain: false })
+    // init()
+    // Cross-origin test: communication is indeed not possible
+    init({ sameDomain: false })
 })
 
 function init({ sameDomain = true } = {}) {
