@@ -31,9 +31,13 @@ Start a server in port 8081 for tab1.html
 ```
 http-server -p 8081
 ```
-Start a server in port 8082 for tab2.html and tab1-iframe.html
+Start a server in port 8082 for tab2.html
 ```
 http-server -p 8082
+```
+Start a server in port 8082 for tab3.html and tab1-iframe.html
+```
+http-server -p 8083
 ```
 
 ## Running the experiment
