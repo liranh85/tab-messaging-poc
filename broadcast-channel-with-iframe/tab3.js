@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function init() {
     log('Setting up BroadcastChannel')
     const bc = new BroadcastChannel('chargeafter_channel')
+    log('Posting message via BroadcastChannel in 3 seconds')
     window.setTimeout(() => {
-        log('Posting message via BroadcastChannel')
         bc.postMessage('close')
     }, 3000)
 }
