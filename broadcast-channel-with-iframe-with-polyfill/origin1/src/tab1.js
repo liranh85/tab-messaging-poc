@@ -10,16 +10,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function createIframe() {
     const iframe = document.createElement('iframe')
-    iframe.src = 'http://127.0.0.1:8083/tab1-iframe.html'
+    const targetUrl = `http://${window.location.hostname}:8083`
+    iframe.src = `${targetUrl}/tab1-iframe.html`
     iframe.style.display = 'none'
     document.body.append(iframe)
 }
 
 function openTab2() {
-    const url = 'http://127.0.0.1:8082'
-    log(`Opening ${url} in 3 seconds`)
+    const targetUrl = `http://${window.location.hostname}:8082`
+    log(`Opening ${targetUrl} in 3 seconds`)
     window.setTimeout(() => {
-        tab2 = window.open(url, '_blank')
+        tab2 = window.open(targetUrl, '_blank')
     }, 3000)
 }
 

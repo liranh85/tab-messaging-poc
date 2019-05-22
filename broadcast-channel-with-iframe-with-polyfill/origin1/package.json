@@ -4,7 +4,7 @@
   "description": "A webpack 4 boilerplate for ESNext and SCSS",
   "main": "dist/index.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.dev.js",
+    "start": "webpack-dev-server --config webpack.dev.js --host 0.0.0.0",
     "format": "prettier-standard 'src/**/*.js'",
     "lint": "eslint src",
     "build": "webpack --config webpack.prod.js",
