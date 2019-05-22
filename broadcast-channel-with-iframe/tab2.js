@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function init() {
     log('Redirecting to tab3 (different origin) in 3 seconds')
     window.setTimeout(() => {
-        window.location.replace('http://127.0.0.1:8083/tab3.html')
+        const targetUrl = `http://${window.location.hostname}:8083/tab3.html`
+        window.location.replace(targetUrl)
     }, 3000)
 }
 

@@ -9,5 +9,14 @@
 </head>
 <body>
     <p>This is the original tab</p>
+    <button id="button">Click me</button>
+    <p>When you click the button, the following will happen:</p>
+    <ul>
+        <li>This tab (Tab 1), of origin X, will open a new tab (Tab 2) of origin Y</li>
+        <li>Tab 2 will redirect to Tab 3 of origin Z</li>
+        <li>Tab 3 will message the iframe (of origin Z) in Tab 1 using `BroadcastChannel`</li>
+        <li>The iframe will pass the message to Tab 1 via the iframe method of `parent.postMessage`</li>
+        <li>Tab 1 will receive the message, and close the tab it opened</li>
+    </ul>
 </body>
 </html>
