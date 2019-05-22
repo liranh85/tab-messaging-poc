@@ -1,3 +1,5 @@
+import BroadcastChannel from 'broadcast-channel'
+
 document.addEventListener('DOMContentLoaded', () => {
     setupBroadcastChannel()
 })
@@ -9,9 +11,12 @@ function setupBroadcastChannel() {
 }
 
 function message_receive(message) {
-    log(`Received message via BroadcastChannel: ${message.data}`)
+    // The BroadcastChannel polyfill we're using seems to have the message string directly in `message`, rather than in `message.data` (which is what the original BroadcastChannel Web API does)
+    // Hence the following line
+    const msg = message.data || message
+    log(`Received message via BroadcastChannel: ${msg}`)
     log('Posting message to parent window')
-    parent.postMessage(message.data, '*')
+    parent.postMessage(msg, '*')
 }
 
 function log(message) {
