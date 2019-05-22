@@ -1,5 +1,3 @@
-import BroadcastChannel from 'broadcast-channel'
-
 document.addEventListener('DOMContentLoaded', () => {
     init()
 })

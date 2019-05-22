@@ -7,10 +7,12 @@ module.exports = {
   entry: {
     tab3: [
       'babel-polyfill',
+      path.join(__dirname, 'src', 'broadcast-channel-polyfill.js'),
       path.join(__dirname, 'src', 'tab3.js'),
     ],
     'tab1-iframe': [
       'babel-polyfill',
+      path.join(__dirname, 'src', 'broadcast-channel-polyfill.js'),
       path.join(__dirname, 'src', 'tab1-iframe.js'),
     ]
   },
